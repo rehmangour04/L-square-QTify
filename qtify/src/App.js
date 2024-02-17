@@ -1,5 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+/** @format */
+
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -15,8 +17,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React with crio learning by doing
         </a>
+        <p>my name is khan</p>
       </header>
     </div>
   );
