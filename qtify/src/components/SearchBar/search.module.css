@@ -12,6 +12,7 @@
   height: 30px;
   font-size: 16px;
   line-height: 19.2px;
+  outline: none;
   letter-spacing: 0.2px;
   padding: 8px;
   border: 1px solid #121212;
@@ -24,7 +25,9 @@
   background-color: #ffffff;
   width: 66px;
   height: 47px;
+  top: 13px;
   border-radius: 0 8px 8px 0; /* Simplified border-radius notation */
   cursor: pointer;
   border: 1px solid #121212;
+  border-left: none;
 }

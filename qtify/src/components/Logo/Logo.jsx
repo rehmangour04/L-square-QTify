@@ -1,9 +1,15 @@
 /** @format */
 
 import React from "react";
-import "./logo.css";
 import LogoImage from "../../assets/logo.png";
+import "./logo.css";
 
-export default function Logo() {
-  return <img src={LogoImage} alt="QTify Logo" className="logo" width={65} />;
-}
+const Logo = () => {
+  return (
+    <div>
+      <img src={LogoImage} alt="Logo" className="logo" />
+    </div>
+  );
+};
+
+export default Logo;
