@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className={styles.Navbar}>
       <Logo />
       <SearchBar />
-      <FeedbackButton />
+      <FeedbackButton text="Give Feedback" />
     </nav>
   );
 };

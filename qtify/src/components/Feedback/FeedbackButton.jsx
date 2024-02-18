@@ -3,8 +3,8 @@
 import React from "react";
 import styles from "./feedback.module.css";
 
-const FeedbackButton = () => {
-  return <button className={styles.feedbackButton}>Give Feedback</button>;
+const FeedbackButton = ({ text }) => {
+  return <button className={styles.feedbackButton}>{text}</button>;
 };
 
 export default FeedbackButton;

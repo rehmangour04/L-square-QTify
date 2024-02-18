@@ -1,4 +1,4 @@
-/** @format */
+/* @format */
 
 .searchContainer {
   display: flex;
@@ -15,7 +15,7 @@
   letter-spacing: 0.2px;
   padding: 8px;
   border: 1px solid #121212;
-  border-radius: 8px 0px 0px 8px;
+  border-radius: 8px 0 0 8px; /* Simplified border-radius notation */
   margin: 0;
   overflow: hidden;
 }
@@ -24,8 +24,8 @@
   background-color: #ffffff;
   width: 66px;
   height: 47px;
-  top: 13px;
-  border-radius: 0px 8px 8px 0px;
+  border-radius: 0 8px 8px 0; /* Simplified border-radius notation */
   cursor: pointer;
   border: 1px solid #121212;
+  font-family: "Poppins", sans-serif;
 }
