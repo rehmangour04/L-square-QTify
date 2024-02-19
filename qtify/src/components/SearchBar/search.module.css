@@ -16,7 +16,7 @@
   letter-spacing: 0.2px;
   padding: 8px;
   border: 1px solid #121212;
-  border-radius: 8px 0 0 8px; /* Simplified border-radius notation */
+  border-radius: 8px 0 0 8px;
   margin: 0;
   overflow: hidden;
 }
@@ -26,7 +26,7 @@
   width: 66px;
   height: 47px;
   top: 13px;
-  border-radius: 0 8px 8px 0; /* Simplified border-radius notation */
+  border-radius: 0 8px 8px 0;
   cursor: pointer;
   border: 1px solid #121212;
   border-left: none;
