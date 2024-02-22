@@ -1,23 +1,31 @@
 /** @format */
 import { StyledEngineProvider } from "@mui/material/styles";
 import React, { useEffect } from "react";
-import { fetchTopAlbums } from "./api/api";
+import styles from "./App.module.css";
+
+import { fetchTopAlbums, fetchNewAlbums } from "./api/api";
+
 import { useState } from "react";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import HeroPage from "./components/Hero/HeroPage.jsx";
-import AlbumCard from "./components/Card/AlbumCard.jsx";
+
 import Section from "./components/Section/Section.jsx";
 
 function App() {
   const [topAlbumData, setTopAlbumData] = useState([]);
+  const [newAlbumData, setNewAlbumData] = useState([]);
   const generateTopAlbumData = async () => {
     const data = await fetchTopAlbums();
-    console.log("data", data);
     setTopAlbumData(data);
   };
 
+  const generateNewAlbumData = async () => {
+    const data = await fetchNewAlbums();
+    setNewAlbumData(data);
+  };
   useEffect(() => {
     generateTopAlbumData();
+    generateNewAlbumData();
   }, []);
 
   return (
@@ -25,7 +33,10 @@ function App() {
       <StyledEngineProvider injectFirst>
         <Navbar />
         <HeroPage />
-        <Section title="Top Albums" data={topAlbumData} type="album" />
+        <div className={styles.sectionWrapper}>
+          <Section title="Top Albums" data={topAlbumData} type="album" />
+        </div>
+        <Section title="New Albums" data={newAlbumData} type="album" />
       </StyledEngineProvider>
     </>
   );

@@ -1,10 +1,5 @@
 /** @format */
 
-.sectionWrapper {
-  margin: 15px;
-  /* background-color: #121212; */
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -17,7 +12,7 @@
 
 .wrapper {
   display: flex;
-  gap: 29px;
+  gap: 25px;
   flex-wrap: wrap;
 }
 

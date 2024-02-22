@@ -36,6 +36,7 @@ const AlbumCard = ({ data, type }) => {
             </div>
           </Tooltip>
         );
+
       default:
         return null;
     }
