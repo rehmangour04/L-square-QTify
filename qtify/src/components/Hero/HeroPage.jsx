@@ -4,13 +4,15 @@ import HeroImage from "../../assets/vibrating-headphone 1.png";
 const HeroPage = () => {
   return (
     <>
-      <section className={style.heroSection}>
+      <section className={style.wrapper}>
         <div className={style.heroImgContainer}>
-          <div className={style.heroText}>
-            <p>100 Thousand Songs, ad-free</p>
-            <p>Over thousands podcast episodes</p>
+          <div className={style.banner}>
+            <h1>100 Thousand Songs, ad-free</h1>
+            <h1>Over thousands podcast episodes</h1>
           </div>
-          <img src={HeroImage} alt="headphone" className={style.headphoneImg} />
+          <div>
+            <img src={HeroImage} alt="headphone" height="212px" width="212px" />
+          </div>
         </div>
       </section>
     </>

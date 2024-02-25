@@ -1,0 +1,71 @@
+/** @format */
+
+.wrapper {
+  margin-bottom: 15px;
+  border: 1px solid var(--color-white);
+  border-radius: 10px;
+}
+.accordionHeader {
+  width: 100%;
+  max-width: 1135px;
+  height: 78px;
+  display: flex;
+  border-radius: 10px;
+
+  flex-shrink: 0;
+  /* border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; */
+  border: 1px solid var(--color-white);
+  background: var(--color-black);
+  justify-content: space-between;
+  color: var(--color-white);
+  padding: 8px 16px;
+}
+
+.accordionText,
+.accordionDescription {
+  font-family: Poppins;
+  font-style: normal;
+  line-height: normal;
+}
+
+.accordionText {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: start;
+  margin-right: 16px;
+}
+
+.accordionDescription {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.arrow {
+  color: var(--primary-400, var(--color-primary));
+  text-align: right;
+  font-family: "Font Awesome 6 Pro";
+  font-size: 40px;
+  font-weight: 900;
+  margin-left: auto;
+}
+
+@media (max-width: 1200px) {
+  .accordionHeader {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 992px) {
+  .accordionHeader {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .arrow {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}

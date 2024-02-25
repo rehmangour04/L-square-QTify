@@ -1,28 +1,21 @@
 /** @format */
 
-import React, { useMemo } from "react";
+import React from "react";
 import styles from "./search.module.css";
-import SearchIcon from "../../assets/SearchIcon.svg";
+import { ReactComponent as SearchIcon } from "../../assets/SearchIcon.svg";
 
-const SearchBar = () => {
-  const handleSearchIconClick = useMemo(() => {
-    return () => {
-      document.getElementById("searchInput").focus();
-    };
-  }, []);
+const SearchBar = (props) => {
+  const { placeholder } = props;
 
   return (
-    <div className={styles.searchContainer}>
-      <input
-        id="searchInput"
-        type="text"
-        placeholder="Search an album of your choice"
-        className={styles.searchInput}
-      />
-      <button className={styles.searchButton} onClick={handleSearchIconClick}>
-        <img src={SearchIcon} alt="Search" />
-      </button>
-    </div>
+    <>
+      <form className={styles.wrapper}>
+        <input className={styles.search} placeholder={placeholder}></input>
+        <button className={styles.searchButton} type="submit">
+          <SearchIcon />
+        </button>
+      </form>
+    </>
   );
 };
 

@@ -56,3 +56,8 @@ h6 {
 .swiper-slide {
   width: auto !important;
 }
+
+.MuiTabs-indicator {
+  background-color: var(--color-primary);
+  height: 2px;
+}

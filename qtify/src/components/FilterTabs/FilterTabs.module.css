@@ -1,0 +1,14 @@
+/** @format */
+
+.filterSectionWrapper {
+  padding: 0px 30px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.tab {
+  color: var(--var-color-white) !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+}

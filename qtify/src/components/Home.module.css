@@ -1,0 +1,43 @@
+/** @format */
+
+.sectionWrapper {
+  padding: 0px 30px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.tabsTitle {
+  margin-left: 15px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  color: var(--color-primary);
+}
+
+.songLine {
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.customAccordionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 345px;
+  flex-shrink: 0;
+}
+
+.accordionHeader {
+  margin: 15px;
+  color: var(--color-white);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
