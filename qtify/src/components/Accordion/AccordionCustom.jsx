@@ -21,12 +21,6 @@ const accordionData = [
     answer:
       "Sorry, unfortunately we don't provide service to download any songs.",
   },
-  {
-    id: "panel3",
-    question: "Can I download and listen to songs offline?",
-    answer:
-      "Sorry, unfortunately we don't provide service to download any songs.",
-  },
 ];
 
 const AccordionCustom = () => {
@@ -36,7 +30,7 @@ const AccordionCustom = () => {
   };
 
   return (
-    <div>
+    <div className={styles.accordionContainer}>
       {accordionData.map((item) => (
         <Accordion
           key={item.id}

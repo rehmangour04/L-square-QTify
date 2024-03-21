@@ -2,11 +2,12 @@
 
 import React, { useState } from "react";
 import styles from "./Section.module.css";
-import { CircularProgress } from "@mui/material";
 import AlbumCard from "../../components/Card/AlbumCard";
 import Carousel from "../Carousel/Carousel";
+import SkeletonLoader from "../Loader/Loader";
 
-const Section = ({ title, data, type, header }) => {
+const Section = ({ title, data, type, header, loadingState }) => {
+  console.log(loadingState);
   const [carouselToggle, setCarouselToggle] = useState(true);
 
   const handleToggle = () => {
@@ -25,9 +26,7 @@ const Section = ({ title, data, type, header }) => {
           </h4>
         </div>
       )}
-      {data?.length === 0 ? (
-        <CircularProgress />
-      ) : (
+      {data?.length ? (
         <div className={styles.cardWrapper}>
           {!carouselToggle ? (
             <div className={styles.wrapper}>
@@ -44,6 +43,10 @@ const Section = ({ title, data, type, header }) => {
             />
           )}
         </div>
+      ) : loadingState ? (
+        <SkeletonLoader name={"card"} count={5} />
+      ) : (
+        <p>No Data found</p>
       )}
     </div>
   );

@@ -1,0 +1,9 @@
+/** @format */
+
+.card_container {
+  margin-top: 10px;
+  display: flex;
+  gap: 26px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}

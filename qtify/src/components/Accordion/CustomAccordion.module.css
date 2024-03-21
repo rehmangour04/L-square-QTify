@@ -4,17 +4,18 @@
   margin-bottom: 15px;
   border: 1px solid var(--color-white);
   border-radius: 10px;
+  object-fit: contain;
 }
+.accordionContainer {
+  width: 80%;
+}
+
 .accordionHeader {
   width: 100%;
-  max-width: 1135px;
-  height: 78px;
+  height: 60px;
   display: flex;
   border-radius: 10px;
-
   flex-shrink: 0;
-  /* border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px; */
   border: 1px solid var(--color-white);
   background: var(--color-black);
   justify-content: space-between;

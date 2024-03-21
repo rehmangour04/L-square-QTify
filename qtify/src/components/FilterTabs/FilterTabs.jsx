@@ -6,8 +6,9 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import Section from "../Section/Section";
 import styles from "./FilterTabs.module.css";
+import { allSongsTabs } from "../../TabSongs/data";
 
-const FilterTabs = ({ data }) => {
+const FilterTabs = ({ data, loadingState }) => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -37,39 +38,24 @@ const FilterTabs = ({ data }) => {
             onChange={handleChange}
             aria-label="basic tabs example"
           >
-            <Tab label="All" className={styles.tab} />
-            <Tab label="Rock " className={styles.tab} />
-            <Tab label="Pop" className={styles.tab} />
-            <Tab label="Jazz " className={styles.tab} />
-            <Tab label="Blues" className={styles.tab} />
+            {allSongsTabs.map((each) => (
+              <Tab label={each} key={each} className={styles.tab} />
+            ))}
           </Tabs>
         </Box>
+        {allSongsTabs.map((_, index) => (
+          <TabPanel key={index} value={value} index={index}>
+            <div className={styles.filterSectionWrapper}>
+              <Section
+                data={filteredData(index)}
+                type="songs"
+                header={index ? "filterAll" : "all"}
+                loadingState={loadingState}
+              />
+            </div>
+          </TabPanel>
+        ))}
       </Box>
-      <TabPanel value={value} index={0}>
-        <div className={styles.filterSectionWrapper}>
-          <Section data={filteredData(0)} type="songs" header="all" />
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <div className={styles.filterSectionWrapper}>
-          <Section data={filteredData(1)} type="songs" header="filterAll" />
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <div className={styles.filterSectionWrapper}>
-          <Section data={filteredData(2)} type="songs" header="filterAll" />
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <div className={styles.filterSectionWrapper}>
-          <Section data={filteredData(3)} type="songs" header="filterAll" />
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        <div className={styles.filterSectionWrapper}>
-          <Section data={filteredData(4)} type="songs" header="filterAll" />
-        </div>
-      </TabPanel>
     </div>
   );
 };

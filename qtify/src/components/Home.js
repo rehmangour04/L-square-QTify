@@ -10,6 +10,7 @@ import Navbar from "./Navbar/Navbar.jsx";
 import HeroPage from "./Hero/HeroPage.jsx";
 import FilterTabs from "./FilterTabs/FilterTabs.jsx";
 import Section from "./Section/Section.jsx";
+// import Footer from "./Footer/Footer.jsx";
 
 function Home() {
   const [topAlbumData, setTopAlbumData] = useState([]);
@@ -47,19 +48,17 @@ function Home() {
       <div className={styles.sectionWrapper}>
         <Section title="New Albums" data={newAlbumData} type="album" />
       </div>
-
       <hr className={styles.songLine}></hr>
-
       <div>
         <h3 className={styles.tabsTitle}>Songs</h3>
       </div>
-
       <FilterTabs data={songs} />
-      <hr></hr>
+      {/* <hr className={styles.songLine}></hr>{" "} */}
       <div className={styles.customAccordionWrapper}>
         <h1 className={styles.accordionHeader}>FAQs</h1>
         <AccordionCustom />
       </div>
+      <hr className={styles.songLine}></hr>
     </>
   );
 }

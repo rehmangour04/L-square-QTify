@@ -1,0 +1,57 @@
+/** @format */
+
+.footer-wrapper {
+  display: flex;
+  gap: 20%;
+  height: 130px;
+  padding: 0 32px;
+  width: 100%;
+}
+
+.footer-song {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+
+.song-title {
+  overflow-wrap: break-word;
+}
+.album-title {
+  font-size: 14px;
+}
+
+.player-wrapper {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.progress-bar {
+  gap: 16px;
+  margin-bottom: 12px;
+  align-items: center;
+  display: flex;
+}
+
+.volume-layout {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-wrapper {
+    justify-content: center;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-song {
+    left: 32px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
