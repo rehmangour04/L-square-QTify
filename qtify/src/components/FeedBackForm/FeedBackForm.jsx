@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import styles from "./feedbackform.module.css";
 import { ReactComponent as CrossBtn } from "../../assets/crossBtn.svg";
-import FeedbackButton from "../Feedback/FeedbackButton";
+import FeedbackButton from "./Feedback/FeedbackButton";
 
 const style = {
   position: "absolute",

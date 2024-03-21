@@ -25,7 +25,9 @@ const FilterTabs = ({ data, loadingState }) => {
       return data;
     } else {
       const tabLabel = ["Rock", "Pop", "Jazz", "Blues"][index - 1];
-      return data.filter((item) => item.genre.key === tabLabel.toLowerCase());
+      return data?.filter(
+        (item) => item?.genre?.key === tabLabel?.toLowerCase()
+      );
     }
   };
 

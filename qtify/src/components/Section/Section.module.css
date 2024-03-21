@@ -20,3 +20,9 @@
   cursor: pointer;
   color: var(--color-primary);
 }
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    gap: 15px;
+  }
+}

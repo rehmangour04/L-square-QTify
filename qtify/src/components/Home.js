@@ -5,12 +5,12 @@ import { fetchTopAlbums, fetchNewAlbums, fetchAllSongs } from "../api/api.js";
 import { useState } from "react";
 import styles from "./Home.module.css"; // Import styles from the new module
 import AccordionCustom from "./Accordion/AccordionCustom";
-// import SearchBar from "./components/SearchBar/SearchBar";
-
 import Navbar from "./Navbar/Navbar.jsx";
 import HeroPage from "./Hero/HeroPage.jsx";
 import FilterTabs from "./FilterTabs/FilterTabs.jsx";
 import Section from "./Section/Section.jsx";
+import { Toaster } from "react-hot-toast";
+import { errorHandler } from "../config/helper-methods";
 // import Footer from "./Footer/Footer.jsx";
 
 function Home() {
@@ -35,7 +35,7 @@ function Home() {
       manageLoadingState("topAlbum", false);
     } catch (error) {
       manageLoadingState("topAlbum", false);
-      console.log(error);
+      errorHandler(error);
     }
   };
 
@@ -47,7 +47,7 @@ function Home() {
       manageLoadingState("newAlbum", false);
     } catch (error) {
       manageLoadingState("newAlbum", false);
-      console.log(error);
+      errorHandler(error);
     }
   };
 
@@ -59,7 +59,7 @@ function Home() {
       manageLoadingState("allSongs", false);
     } catch (error) {
       manageLoadingState("allSongs", false);
-      console.log(error);
+      errorHandler(error);
     }
   };
 
@@ -69,9 +69,12 @@ function Home() {
     generateAllSongsData();
   }, []);
 
+  const dropdownData = topAlbumData?.concat(newAlbumData);
+
   return (
     <>
-      <Navbar data={topAlbumData} />
+      <Toaster position="bottom-right" reverseOrder={false} />
+      <Navbar data={dropdownData} />
       <HeroPage />
       <div className={styles.sectionWrapper}>
         <Section

@@ -7,7 +7,6 @@ import Carousel from "../Carousel/Carousel";
 import SkeletonLoader from "../Loader/Loader";
 
 const Section = ({ title, data, type, header, loadingState }) => {
-  console.log(loadingState);
   const [carouselToggle, setCarouselToggle] = useState(true);
 
   const handleToggle = () => {

@@ -11,7 +11,7 @@ const Menu = ({ albums }) => {
       <div className={styles.wrapper}>
         {albums?.length
           ? albums.map((item) => (
-              <div className={styles.menuItemWrapper}>
+              <div className={styles.menuItemWrapper} key={item.id}>
                 <SongItems
                   image={item.image}
                   albumName={item.title}
