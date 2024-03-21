@@ -5,6 +5,7 @@ import { fetchTopAlbums, fetchNewAlbums, fetchAllSongs } from "../api/api.js";
 import { useState } from "react";
 import styles from "./Home.module.css"; // Import styles from the new module
 import AccordionCustom from "./Accordion/AccordionCustom";
+// import SearchBar from "./components/SearchBar/SearchBar";
 
 import Navbar from "./Navbar/Navbar.jsx";
 import HeroPage from "./Hero/HeroPage.jsx";
@@ -17,19 +18,49 @@ function Home() {
   const [newAlbumData, setNewAlbumData] = useState([]);
   const [songs, setSongs] = useState([]);
 
+  const [loadingState, setLoadingState] = useState({
+    topAlbum: true,
+    newAlbum: true,
+    allSongs: true,
+  });
+
+  const manageLoadingState = (key = "", value = false) => {
+    setLoadingState((prevState) => ({ ...prevState, [key]: value }));
+  };
   const generateTopAlbumData = async () => {
-    const data = await fetchTopAlbums();
-    setTopAlbumData(data);
+    try {
+      manageLoadingState("topAlbum", true);
+      const data = await fetchTopAlbums();
+      setTopAlbumData(data);
+      manageLoadingState("topAlbum", false);
+    } catch (error) {
+      manageLoadingState("topAlbum", false);
+      console.log(error);
+    }
   };
 
   const generateNewAlbumData = async () => {
-    const data = await fetchNewAlbums();
-    setNewAlbumData(data);
+    try {
+      manageLoadingState("newAlbum", true);
+      const data = await fetchNewAlbums();
+      setNewAlbumData(data);
+      manageLoadingState("newAlbum", false);
+    } catch (error) {
+      manageLoadingState("newAlbum", false);
+      console.log(error);
+    }
   };
 
   const generateAllSongsData = async () => {
-    const data = await fetchAllSongs();
-    setSongs(data);
+    try {
+      manageLoadingState("allSongs", true);
+      const data = await fetchAllSongs();
+      setSongs(data);
+      manageLoadingState("allSongs", false);
+    } catch (error) {
+      manageLoadingState("allSongs", false);
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -40,20 +71,29 @@ function Home() {
 
   return (
     <>
-      <Navbar />
+      <Navbar data={topAlbumData} />
       <HeroPage />
       <div className={styles.sectionWrapper}>
-        <Section title="Top Albums" data={topAlbumData} type="album" />
+        <Section
+          title="Top Albums"
+          data={topAlbumData}
+          type="album"
+          loadingState={loadingState.topAlbum}
+        />
+        <Section
+          title="New Albums"
+          data={newAlbumData}
+          type="album"
+          loadingState={loadingState.newAlbum}
+        />
       </div>
-      <div className={styles.sectionWrapper}>
-        <Section title="New Albums" data={newAlbumData} type="album" />
-      </div>
-      <hr className={styles.songLine}></hr>
+      <hr className={styles.line}></hr>
       <div>
         <h3 className={styles.tabsTitle}>Songs</h3>
       </div>
-      <FilterTabs data={songs} />
-      {/* <hr className={styles.songLine}></hr>{" "} */}
+      <FilterTabs data={songs} loadingState={loadingState.allSongs} />
+      <hr className={styles.line}></hr>
+
       <div className={styles.customAccordionWrapper}>
         <h1 className={styles.accordionHeader}>FAQs</h1>
         <AccordionCustom />

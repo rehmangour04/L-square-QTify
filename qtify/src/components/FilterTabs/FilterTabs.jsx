@@ -30,7 +30,7 @@ const FilterTabs = ({ data, loadingState }) => {
   };
 
   return (
-    <div>
+    <div className={styles.filterSectionWrapper}>
       <Box sx={{ width: "100%" }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs
@@ -39,13 +39,18 @@ const FilterTabs = ({ data, loadingState }) => {
             aria-label="basic tabs example"
           >
             {allSongsTabs.map((each) => (
-              <Tab label={each} key={each} className={styles.tab} />
+              <Tab
+                label={each}
+                key={each}
+                className={styles.tab}
+                sx={{ color: "white" }}
+              />
             ))}
           </Tabs>
         </Box>
         {allSongsTabs.map((_, index) => (
           <TabPanel key={index} value={value} index={index}>
-            <div className={styles.filterSectionWrapper}>
+            <div>
               <Section
                 data={filteredData(index)}
                 type="songs"
